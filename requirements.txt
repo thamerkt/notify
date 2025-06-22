@@ -1,0 +1,8 @@
+Django==4.2.16
+djangorestframework
+djangorestframework-simplejwt
+openpyxl
+psycopg2-binary
+django-cors-headers
+Pillow
+pika
