@@ -6,3 +6,4 @@ psycopg2-binary
 django-cors-headers
 Pillow
 pika
+python-dotenv
