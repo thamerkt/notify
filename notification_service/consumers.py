@@ -85,13 +85,9 @@ def start_notification_service():
     print("🚀 Notification service starting...")
     while True:
         try:
-            connection_params = pika.ConnectionParameters(
-                host=RABBITMQ_HOST,
-                port=RABBITMQ_PORT,
-                heartbeat=600,
-                blocked_connection_timeout=300
-            )
-            connection = pika.BlockingConnection(connection_params)
+            amqp_url = 'amqps://poqribhv:LzwYFbmBXeyiQI0GveEEe-YQyDeH126c@kebnekaise.lmq.cloudamqp.com/poqribhv'
+            parameters = pika.URLParameters(amqp_url)
+            connection = pika.BlockingConnection(parameters)
             channel = connection.channel()
             channel.queue_declare(queue=RABBITMQ_QUEUE, durable=True)
             channel.basic_qos(prefetch_count=1)
